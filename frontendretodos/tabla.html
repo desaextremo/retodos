@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en" class="" style="">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Reproductor de cursos</title>
+</head>
+
+<body>
+    <table border="border: 1px">
+        <tbody>
+            <tr>
+                <th><strong>Casos de prueba</strong></th>
+            </tr>
+            <tr>
+                <td>
+                    <table border="border: 1px">
+                        <tbody>
+                            <tr>
+                                <td><strong>Caso 1 </strong></td>
+                                <td>
+                                    <table border="border: 1px">
+                                        <tbody>
+                                            <tr>
+                                                <td width="75px"><strong>Tipo</strong></td>
+                                                <td>POST</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Endpoint</strong></td>
+                                                <td>BASE_URL/api/user/new</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Body</strong></td>
+                                                <td>{ "id": 1, "identification": "123123", "name": "CARLOS ALBERTO
+                                                    GARCIA", "address": "CR 34-45", "cellPhone": "311222222", "email":
+                                                    "cgarcia@gmail.com", "password": "Demo123.", "zone": "ZONA 2",
+                                                    "type": "ADM"}</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Salida</strong></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Caso 2</strong></td>
+                                <td>
+                                    <table border="border: 1px">
+                                        <tbody>
+                                            <tr>
+                                                <td width="75px"><strong>Tipo</strong></td>
+                                                <td>GET</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Endpoint</strong></td>
+                                                <td>BASE_URL/api/user/all</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Body</strong></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Salida</strong></td>
+                                                <td>[{"id":1,"identification":"123123","name":"CARLOS ALBERTO
+                                                    GARCIA","address":"CR
+                                                    34-45","cellPhone":"311222222","email":"cgarcia@gmail.com","password":"Demo123.","zone":"ZONA
+                                                    2","type":"ADM"}]</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Caso 3</strong></td>
+                                <td>
+                                    <table border="border: 1px">
+                                        <tbody>
+                                            <tr>
+                                                <td width="75px"><strong>Tipo</strong></td>
+                                                <td>GET</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Endpoint</strong></td>
+                                                <td>BASE_URL/api/user/emailexist/cgarcia@gmail.com</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Body</strong></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Salida</strong></td>
+                                                <td>true</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Caso 4</strong></td>
+                                <td>
+                                    <table border="border: 1px">
+                                        <tbody>
+                                            <tr>
+                                                <td width="75px"><strong>Tipo</strong></td>
+                                                <td>GET</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Endpoint</strong></td>
+                                                <td>BASE_URL/api/user/emailexist/cgarcial@gmail.com</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Body</strong></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Salida</strong></td>
+                                                <td>false</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Caso 5</strong></td>
+                                <td>
+                                    <table border="border: 1px">
+                                        <tbody>
+                                            <tr>
+                                                <td width="75px"><strong>Tipo</strong></td>
+                                                <td>GET</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Endpoint</strong></td>
+                                                <td>BASE_URL/api/user/cgarcia@gmail.com/Demo123.</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Body</strong></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Salida</strong></td>
+                                                <td>{"id":1,"identification":"123123","name":"CARLOS ALBERTO
+                                                    GARCIA","address":"CR
+                                                    34-45","cellPhone":"311222222","email":"cgarcia@gmail.com","password":"Demo123.","zone":"ZONA
+                                                    2","type":"ADM"}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Caso 6</strong></td>
+                                <td>
+                                    <table border="border: 1px">
+                                        <tbody>
+                                            <tr>
+                                                <td width="75px"><strong>Tipo</strong></td>
+                                                <td>GET</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Endpoint</strong></td>
+                                                <td>BASE_URL/api/user/cgarcia@gmail.com/Demo12</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Body</strong></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Salida</strong></td>
+                                                <td>{"id":null,"identification":null,"name":null,"address":null,"cellPhone":null,"email":null,"password":null,"zone":null,"type":null}
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Caso 7</strong></td>
+                                <td>
+                                    <table border="border: 1px">
+                                        <tbody>
+                                            <tr>
+                                                <td width="75px"><strong>Tipo</strong></td>
+                                                <td>PUT</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Endpoint</strong></td>
+                                                <td>BASE_URL/api/user/update</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Body</strong></td>
+                                                <td>{"id": 1,"identification": "123123","name": "ALBERTO
+                                                    GARCIA","address": "CR 90-25","cellPhone": "2222222","email":
+                                                    "agarcia@gmail.com","password": "Agarcia","zone": "ZONA 1","type":
+                                                    "ADM"}</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Salida</strong></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Caso 8</strong></td>
+                                <td>
+                                    <table border="border: 1px">
+                                        <tbody>
+                                            <tr>
+                                                <td width="75px"><strong>Tipo</strong></td>
+                                                <td>GET</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Endpoint</strong></td>
+                                                <td>BASE_URL/api/user/all</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Body</strong></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Salida</strong></td>
+                                                <td>[{"id":1,"identification":"123123","name":"ALBERTO
+                                                    GARCIA","address":"CR
+                                                    90-25","cellPhone":"2222222","email":"agarcia@gmail.com","password":"Agarcia","zone":"ZONA
+                                                    1","type":"ADM"}]</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Caso 9</strong></td>
+                                <td>
+                                    <table border="border: 1px">
+                                        <tbody>
+                                            <tr>
+                                                <td width="75px"><strong>Tipo</strong></td>
+                                                <td>DELETE</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Endpoint</strong></td>
+                                                <td>BASE_URL/api/user/1</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Body</strong></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Salida</strong></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Caso 10</strong></td>
+                                <td>
+                                    <table border="border: 1px">
+                                        <tbody>
+                                            <tr>
+                                                <td width="75px"><strong>Tipo</strong></td>
+                                                <td>GET</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Endpoint</strong></td>
+                                                <td>BASE_URL/api/user/all</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Body</strong></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Salida</strong></td>
+                                                <td>[]</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Caso 11</strong></td>
+                                <td>
+                                    <table border="border: 1px">
+                                        <tbody>
+                                            <tr>
+                                                <td width="75px"><strong>Tipo</strong></td>
+                                                <td>POST</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Endpoint</strong></td>
+                                                <td>BASE_URL/api/gadget/new</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Body</strong></td>
+                                                <td>{"id": 1,"brand": "GENIUS","category": "MOUSE","name": "MSUPER
+                                                    MOUSE","description": "MOUSE PARA VIDEO GAMERS","price":
+                                                    250000,"availability": true,"quantity": 10,"photography":
+                                                    "https://www.avasoluciones.com/mouse.jpg"}</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Salida</strong></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Caso 12</strong></td>
+                                <td>
+                                    <table border="border: 1px">
+                                        <tbody>
+                                            <tr>
+                                                <td width="75px"><strong>Tipo</strong></td>
+                                                <td>GET</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Endpoint</strong></td>
+                                                <td>BASE_URL/api/gadget/all</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Body</strong></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Salida</strong></td>
+                                                <td>[{"id":1,"brand":"GENIUS","category":"MOUSE","name":"MSUPER
+                                                    MOUSE","description":"MOUSE PARA VIDEO
+                                                    GAMERS","price":250000.0,"availability":true,"quantity":10,"photography":"https://www.avasoluciones.com/mouse.jpg"}]
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Caso 13</strong></td>
+                                <td>
+                                    <table border="border: 1px">
+                                        <tbody>
+                                            <tr>
+                                                <td width="75px"><strong>Tipo</strong></td>
+                                                <td>PUT</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Endpoint</strong></td>
+                                                <td>BASE_URL/api/gadget/update</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Body</strong></td>
+                                                <td>{"id": 1,"brand": "LOGITEC","category": "MOUSE SMR5406@","name":
+                                                    "ADF-234 SUPER MOUSE","description": "MOUSE LOGITEC","price":
+                                                    180000,"availability": true,"quantity": 20,"photography":
+                                                    "https://www.avasoluciones.com/mouse.jpg"}</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Salida</strong></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Caso 14</strong></td>
+                                <td>
+                                    <table border="border: 1px">
+                                        <tbody>
+                                            <tr>
+                                                <td width="75px"><strong>Tipo</strong></td>
+                                                <td>GET</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Endpoint</strong></td>
+                                                <td>BASE_URL/api/gadget/all</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Body</strong></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Salida</strong></td>
+                                                <td>[{"id":1,"brand":"LOGITEC","category":"MOUSE
+                                                    SMR5406@","name":"ADF-234 SUPER MOUSE","description":"MOUSE
+                                                    LOGITEC","price":180000.0,"availability":true,"quantity":20,"photography":"https://www.avasoluciones.com/mouse.jpg"}]
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Caso 15</strong></td>
+                                <td>
+                                    <table border="border: 1px">
+                                        <tbody>
+                                            <tr>
+                                                <td width="75px"><strong>Tipo</strong></td>
+                                                <td>DELETE</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Endpoint</strong></td>
+                                                <td>BASE_URL/api/gadget/1</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Body</strong></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Salida</strong></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Caso 16</strong></td>
+                                <td>
+                                    <table border="border: 1px">
+                                        <tbody>
+                                            <tr>
+                                                <td width="75px"><strong>Tipo</strong></td>
+                                                <td>GET</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Endpoint</strong></td>
+                                                <td>BASE_URL/api/gadget/all</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Body</strong></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Salida</strong></td>
+                                                <td>[]</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
